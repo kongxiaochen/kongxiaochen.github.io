@@ -15,21 +15,14 @@ HTML5
    <option value="Angola 安哥拉">
 </datalist>
 ~~~
-  <datalist>
-<label for="country_name">国家 : </label><input id="country_name" name="country_name" type="text" list="country" />
-<datalist id="country">
-   <option value="Afghanistan 阿富汗">
-   <option value="Albania 阿尔巴尼亚">
-   <option value="Algeria 阿尔及利亚">
-   <option value="Andorra 安道尔共和国">
-   <option value="Angola 安哥拉">
-</datalist>
-(2) <output>
+  2.output
+~~~
 <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
 <input type="range" id="a" value="50">100
 +<input type="number" id="b" value="50">
 =<output name="x" for="a b"></output>
 </form>
+~~~
 (3) <video> <audio>
 (4) <progess>
 (5) <canvas>
