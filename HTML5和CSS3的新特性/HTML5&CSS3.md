@@ -1,11 +1,10 @@
-HTML5&CSS3
-==
-HTML5
---
-* 新增的标签</br>
-1.datalist 
-~~~
-<datalist>
+# HTML5&CSS3
+
+## HTML5
+
+- 新增的标签
+1. datalist 
+`<datalist>
 <label for="country_name">国家 : </label><input id="country_name" name="country_name" type="text" list="country" />
 <datalist id="country">
    <option value="Afghanistan 阿富汗">
@@ -14,19 +13,20 @@ HTML5
    <option value="Andorra 安道尔共和国">
    <option value="Angola 安哥拉">
 </datalist>
-~~~
-  2.output
-~~~
+`
+2. output
+`
 <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
 <input type="range" id="a" value="50">100
 +<input type="number" id="b" value="50">
 =<output name="x" for="a b"></output>
 </form>
-~~~
-(3) <video> <audio>
-(4) <progess>
-(5) <canvas>
-**************新增的语义化标签**************
+`
+3. video audio
+4. progess
+5. canvas
+
+- 新增的语义化标签
 (5) <article>
 定义外部的内容。比如来自一个外部的新闻提供者的一篇新的文章，或者来自 blog 的文本，或者是来自论坛的文本。亦或是来自其他外部源内容。
 (6) <aside>
