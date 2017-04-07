@@ -135,7 +135,7 @@ socket.onopen = function(){
 <html>
 <head>
 <style> 
-#test
+#testtest
 {
 width:100px;
 height:100px;
