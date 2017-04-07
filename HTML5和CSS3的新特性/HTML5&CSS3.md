@@ -1,10 +1,11 @@
 # HTML5&CSS3
 
-## HTML5
-
-- 新增的标签
+## HTML5  
+### 新增了一些标签，包括具有新功能的标签以及一些语义化的标签
+* 新增的功能标签
 1. datalist 
-`<datalist>
+```
+<datalist>
 <label for="country_name">国家 : </label><input id="country_name" name="country_name" type="text" list="country" />
 <datalist id="country">
    <option value="Afghanistan 阿富汗">
@@ -13,55 +14,81 @@
    <option value="Andorra 安道尔共和国">
    <option value="Angola 安哥拉">
 </datalist>
-`
+```
+
 2. output
-`
+```
 <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
 <input type="range" id="a" value="50">100
 +<input type="number" id="b" value="50">
 =<output name="x" for="a b"></output>
 </form>
-`
+```
 3. video audio
 4. progess
 5. canvas
 
-- 新增的语义化标签
-(5) <article>
-定义外部的内容。比如来自一个外部的新闻提供者的一篇新的文章，或者来自 blog 的文本，或者是来自论坛的文本。亦或是来自其他外部源内容。
-(6) <aside>
-标签定义 article 以外的内容。aside 的内容应该与 article 的内容相关。
-(7) <section>
-(8) <header> <footer>
-在HTML5标准中，新加了几个用于增添页面语义的标签，这些标签有：article、section、nav和aside等。与别的大多数标签不同，浏览器在解释渲染这些标签的时候仅仅把它作为普通的div块级元素来处理，不会添加任何额外的展现逻辑；也即，这些标签仅用于增添语义。对于Web开发人员而言，使用这些标签的实际意义主要有2点：搜索引擎优化，以及增加页面的可用性(accessibility)。
-在元素分类上，article、section、nav和aside称之为“Sectioning Content”
+* 新增的语义化标签  
+  在HTML5标准中，新加了几个用于增添页面语义的标签，这些标签有：article、section、nav和aside等。与别的大多数标签不同，浏览器在解释渲染这些标签的时候仅仅把它作为普通的div块级元素来处理，不会添加任何额外的展现逻辑；也即，这些标签仅用于增添语义。对于Web开发人员而言，使用这些标签的实际意义主要有2点：搜索引擎优化，以及增加页面的可用性(accessibility)。
+  在元素分类上，article、section、nav和aside称之为“Sectioning Content”
+1. article  
+  定义外部的内容。比如来自一个外部的新闻提供者的一篇新的文章，或者来自 blog 的文本，或者是来自论坛的文本。亦或是来自其他外部源内容。   
+2. aside  
+  标签定义 article 以外的内容。aside 的内容应该与 article 的内容相关。一般用于表示侧边栏。
+3. section  
+  定义文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分，section通常 包含了一组内容及其标题。
+4. header   
+  定义了文档的头部区域
+5. footer  
+  定义了文档的底部区域，通常包含文档的作者，著作权信息，链接的使用条款，联系信息等。 
+6. figure figurecaption  
+  figure标签规定了独立的流内容（图像、图表、照片、代码等等）  
+  figurecaption定义了figure的标题  
+7. nav  
+  定义导航链接部分
+  
 
-HTML5提供了新的语义元素来明确一个Web页面的不同部分。
-  ● <header>：描述了文档的头部区域，于定义内容的介绍展示区域
-  ● <nav>：定义导航链接的部分。
-  ● <section>：定义文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分，section通常 包含了一组内容及其标题。
-  ● <article>：定义独立的内容。
-  ● <aside>：定义页面主区域内容之外的内容（比如侧边栏）。
-  ● <figure>：标签规定独立的流内容（图像、图表、照片、代码等等）。
-  ● <figcaption>：定义 <figure> 元素的标题。
-  ● <footer>：述了文档的底部区域，一个页脚通常包含文档的作者，著作权信息，链接的使用条款，联系信息等。
-在一个网页中，这些新的语义标签元素位置如下图所示：
-
-
-2. 新增的属性
-表单属性
-（1）placeholder
-（2）required="required"
-（3）form属性，表单外部的元素也属于表单范围
-（4）autofocus
-（5）autocomplete="off"/"on"
-（6）list 与datalist元素一起使用
-其他属性
-（3）manifest属性 html标签上使用
-
-（3）data 属性  存储用户的自定义数据
-<div id=”myDiv” data-custom-attr=”My Value”> Bla Bla </div> 
-CSS中使用： 
+在一个网页中，这些新的语义标签元素位置如下图所示：</br>  
+![语义标签位置示意图](http://img.blog.csdn.net/20161226133422933)
+### 新增了一些标签属性  
+  包括实现了离线存储技术的manifest属性，支持自定义数据的data属性，以及一些实用的表单属性
+* 表单属性
+1. placeholder
+2. required="required"
+3. form属性，表单外部的元素也属于表单范围
+4. autofocus
+5. autocomplete="off"/"on"
+6. list 与datalist元素一起使用
+* 其他属性
+1. manifest属性 html标签上使用  
+```
+<!DOCTYPE HTML>
+<html manifest = "cache.manifest">
+...
+</html>
+```
+  用于实现离线存储   
+  [有趣的HTML5:离线存储](https://segmentfault.com/a/1190000000732617)  
+  
+2. data 属性  存储用户的自定义数据  
+  往HTML标签上添加任意以 "data-"开头的属性，这些属性页面上是不显示的，它不会影响到你的页面布局和风格，但它却是可读可写的。  
+  用于存储用户的自定义数据
+```
+ jQuery
+<div id="test" data-myid="3e4ae6c4e">test data</div>
+var myid= jQuery("#test").data('myid');
+ console.log(myid);
+Js
+<div data-author="david" data-time="2011-06-20"  
+          data-comment-num="10"  data-category="javascript">
+....
+</div>
+var post = document.getElementsByTagName('div')[0];
+post.dataset; // DOMStringMap
+post.dataset.commentNum; // 10
+``` 
+CSS中使用：
+```
 <style> 
 h1:hover:after { 
 content: attr(data-hover-response); 
@@ -71,27 +98,31 @@ left: 0;
 } 
 </style> 
 <h1 data-hover-response=”I Said Don’t Touch Me!”> Don’t Touch Me </h1> 
-（4）input type="range"
-<input type=”range”  step=”1″ value=”5"> 
-3.客户端存储
+```
+### 新的技术
+1. 客户端存储
 localStorage  永久
 sessionStorage 一次会话
-方法
+方法:
 locationStorage.setItem('key', value);
 locationStorage.getItem('key');
 locationStorage.removeItem('key');
 locationStorage.clear();
-4. 新的技术 websocket
-http://www.cnblogs.com/doudouxiaoye/p/5656681.html
+2. websocket
+[参考](http://www.cnblogs.com/doudouxiaoye/p/5656681.html) 
+```
 var socket=new WebSocket('ws://game.example.com:12010/updates');
 socket.onopen = function(){
   setInterval(function(){
   if(socket.bufferedAmount == 0)
      socket.send(getUpdateData();
   },50) 
-}
-CSS3
-1.动画 animation
+}  
+```  
+兼容性方面可以由长轮询替代
+## CSS3
+1. 动画 animation  
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -156,7 +187,9 @@ animation:myfirst 5s linear 2s infinite alternate;
 
 </body>
 </html>
-2.过渡 transition
+```
+2. 过渡 transition  
+```
 div
 {
 width:100px;
@@ -172,4 +205,5 @@ div:hover
 {
 width:300px;
 }
-2. 2D变换 translate
+```
+3. 2D变换 translate
