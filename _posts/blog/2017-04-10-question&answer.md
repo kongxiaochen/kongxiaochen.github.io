@@ -3,15 +3,8 @@
 ## <a name='preface'>前言</a> ##
 
 
-[只看问题点这里 ](http://markyun.github.io/2015/Front-end-Developer-Questions/ "Questions")
+[转自https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers "Questions-and-Answers")
 
-[看全部问题和答案点这里](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers "Questions-and-Answers")
-
-本文由我收集总结了一些前端面试题，初学者阅后也要用心钻研其中的原理，重要知识需要系统学习、透彻学习，形成自己的知识链。万不可投机取巧，临时抱佛脚只求面试侥幸混过关是错误的！也是不可能的！不可能的！不可能的！
-
-前端还是一个年轻的行业，新的行业标准， 框架， 库都不断在更新和新增，正如赫门在2015深JS大会上的《前端服务化之路》主题演讲中说的一句话：“每18至24个月，前端都会难一倍”，这些变化使前端的能力更加丰富、创造的应用也会更加完美。所以关注各种前端技术，跟上快速变化的节奏，也是身为一个前端程序员必备的技能之一。
-
-最近也收到许多微博私信的鼓励和更正题目信息，后面会经常更新题目和答案到[github博客](http://markyun.github.io/)。希望前端er达到既能使用也会表达，对理论知识有自己的理解。可根据下面的知识点一个一个去进阶学习，形成自己的职业技能链。
 
 **面试有几点需注意：(来源[寒冬winter](http://weibo.com/wintercn "微博：寒冬winter") 老师，github:@wintercn)**
 
@@ -855,12 +848,14 @@ HTML5？
 
 -  介绍js有哪些内置对象？
 
-		Object 是 JavaScript 中所有对象的父对象
+        内置对象: Global、Math(不能实例化)
 
-		数据封装类对象：Object、Array、Boolean、Number 和 String
-		其他对象：Function、Arguments、Math、Date、RegExp、Error
+        Global对象是ECMAScript中最特别的对象，因为实际上它根本不存在，但大家要清楚，在ECMAScript中，不存在独立的函数，所有函数都必须是某个对象的方法。类似于isNaN()、parseInt()和parseFloat()方法等，看起来都是函数，而实际上，它们都是Global对象的方法。
 
-		参考：http://www.ibm.com/developerworks/cn/web/wa-objectsinjs-v1b/index.html
+        本地对象: Array、Boolean、Date、Function、Global、Math、Number、Object、RegExp、String以及各种错误类对象，包括Error、EvalError、RangeError、ReferenceError、SyntaxError和TypeError。
+
+        宿主对象: window、document
+
 
 -  说几条写JavaScript的基本规范？
 
@@ -876,29 +871,11 @@ HTML5？
 
 -  JavaScript原型，原型链 ? 有什么特点？
 
-		每个对象都会在其内部初始化一个属性，就是prototype(原型)，当我们访问一个对象的属性时，
-		如果这个对象内部不存在这个属性，那么他就会去prototype里找这个属性，这个prototype又会有自己的prototype，
-		于是就这样一直找下去，也就是我们平时所说的原型链的概念。
-		关系：instance.constructor.prototype = instance.__proto__
-
-		特点：
-		JavaScript对象是通过引用来传递的，我们创建的每个新对象实体中并没有一份属于自己的原型副本。当我们修改原型时，与之相关的对象也会继承这一改变。
-
-
-		 当我们需要一个属性的时，Javascript引擎会先看当前对象中是否有这个属性， 如果没有的话，
-		 就会查找他的Prototype对象是否有这个属性，如此递推下去，一直检索到 Object 内建对象。
-			function Func(){}
-			Func.prototype.name = "Sean";
-			Func.prototype.getInfo = function() {
-			  return this.name;
-			}
-			var person = new Func();//现在可以参考var person = Object.create(oldObject);
-			console.log(person.getInfo());//它拥有了Func的属性和方法
-			//"Sean"
-			console.log(Func.prototype);
-			// Func { name="Sean", getInfo=function()}
-
-
+		每个函数都有一个prototype属性，这个属性是一个指针，指向一个原型对象，该对象默认有一个constructor属性，也是指针，指向这个函数。
+		如果这个函数是一个构造函数，由这个函数实例化的对象，内部将包含一个指针，指向构造函数的原型对象，某些浏览器支持这个_proto_属性，在其他实现中这个属性对脚本是不可见的。
+		由于所有的函数默认是Object的实例，因此构造函数的原型对象中也包含指向Object.prototype的指针
+		
+		原型对象的好处就是可以让所有调用同一构造函数实例化出的对象，共享原型对象中包含的属性和方法
 
 
 -  JavaScript有几种类型的值？，你能画一下他们的内存图吗？
